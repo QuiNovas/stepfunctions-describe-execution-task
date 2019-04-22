@@ -14,8 +14,9 @@ def handler(event, context):
         executionArn=event['ExecutionArn']
     )
     response['startDate'] = response['startDate'].isoformat()
-    response['stopDate'] = response['stopDate'].isoformat()
     response['input'] = json.loads(response['input'])
+    if 'stopDate' in response:
+        response['stopDate'] = response['stopDate'].isoformat()
     if 'output' in response:
         response['output'] = json.loads(response['output'])
     if 'ResponseMetadata' in response:
