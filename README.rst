@@ -21,7 +21,7 @@ Request Syntax
 .. code::
 
     {
-        "executionArn": "arn",
+        "ExecutionArn": "arn",
     }
 
 **executionArn**

@@ -11,7 +11,7 @@ logger.setLevel(logging.INFO)
 def handler(event, context):
     logger.info('Processing event :{}'.format(json.dumps(event)))
     response = CLIENT.describe_execution(
-        executionArn=event['executionArn']
+        executionArn=event['ExecutionArn']
     )
     response['startDate'] = response['startDate'].isoformat()
     response['stopDate'] = response['stopDate'].isoformat()
